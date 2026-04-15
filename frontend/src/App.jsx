@@ -5,8 +5,8 @@ function App() {
 
   useEffect(() => {
     
-    // Aquí ocurre la magia de la conectividad entre capas (IE6)
-    // Asegúrate de que tu Backend (FastAPI) esté corriendo en el puerto 8000
+
+    //Backend (FastAPI) corriendo en el puerto 8000
     fetch('http://localhost:8000/items')
       .then(response => response.json())
       .then(data => {
@@ -15,6 +15,7 @@ function App() {
       })
       .catch(error => console.error("Error conectando al Backend:", error))
   }, [])
+  
 
   return (
     <div style={{ padding: '20px', backgroundColor: '#f0f2f5', minHeight: '100vh', fontFamily: 'Arial' }}>

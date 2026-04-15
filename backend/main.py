@@ -23,10 +23,10 @@ SUPABASE_KEY = "sb_publishable_socGEhroN0waoEe8SOPJ5w_GI6Om0vh"
 
 
 
+# Creamos el cliente de Supabase para interactuar con la base de datos
+supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)    
 
-supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)  
-
-@app.get("/")
+@app.get("/") 
 def read_root():
     return {"mensaje": "Backend operando correctamente para Innovatech"}
 
@@ -40,7 +40,7 @@ def get_items():
         return {"error": str(e)}
     
 
-if __name__ == "__main__": 
+if __name__ == "__main__":  # Punto de entrada para ejecutar el servidor
     uvicorn.run(app, host="0.0.0.0", port=8000) 
 
 
